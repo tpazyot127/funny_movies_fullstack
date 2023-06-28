@@ -8,6 +8,7 @@ Here was the challenge:
 - Sharing YouTube videos
 - Viewing a list of shared videos
 - Real-time notifications for new video shares: When a user shares a new video, other logged-in users  receive a real-time notification about the newly shared video. This notification contain the video title and the name of the user who shared it. 
+- MongoDB already supports
 
 
 ## Built With ✨
