@@ -53,19 +53,24 @@ yarn install-all
 ```
 
 Install dependencies - Client
+```bash
+cd client
+```
 
 ```bash
 yarn install
 ```
 
-Install dependencies - Server
+Install dependencies - Backend
+```bash
+cd backend
+```
 
 ```bash
 yarn install
 ```
 
-Add Environment Variables - Client
-
+Add Environment Variables - Backend
 
 <details>
   <summary>Click to expand!</summary>
