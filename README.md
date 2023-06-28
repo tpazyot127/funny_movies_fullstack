@@ -101,6 +101,16 @@ Start the client
 yarn dev
 ```
 
+Run test
+
+```bash
+cd backend
+```
+
+```bash
+yarn test
+```
+
 ## Author
 - [@edward](https://github.com/tpazyot127)
 
