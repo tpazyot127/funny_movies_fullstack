@@ -7,7 +7,8 @@
     "start:server": "npm run start:dev --prefix server",
     "start:client": "npm run dev --prefix client",
     "start-all": "concurrently \"cd client && yarn dev\" \"cd backend && yarn start:dev\"",
-    "install-all": "concurrently \"cd server && yarn install\" \"cd backend && yarn install\""
+    "install-all": "concurrently \"cd client && yarn install\" \"cd backend && yarn install\"",
+    "test" : "concurrently \"cd backend && yarn test\" \"cd client && yarn test\""
   },
   "author": "Edward Do <tpazyot127@gmail.com>",
   "license": "MIT",

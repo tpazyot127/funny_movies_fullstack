@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import { useTypedSelector, useVideosActions } from "../../hooks";
-import { Row, Col, Button } from "react-bootstrap";
 import VideosCard from "../VideosCard";
 import { VideosInterface } from "../../interfaces";
-import { toast } from "react-toastify";
 import { io } from "socket.io-client";
 
 const Dashboard: React.FC = () => {
   const { fetchVideos } = useVideosActions();
-  const { error, data, loading} = useTypedSelector((state) => state.videos);
+  const { data } = useTypedSelector((state) => state?.videos || {});
   const [newSocketData, setNewSocketData] = useState<any>();
   
   useEffect(() => {

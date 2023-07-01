@@ -40,8 +40,6 @@ export const likeVideos = (id : string) => async (dispatch: Dispatch<VideosActio
       type: ActionTypes.LIKE_VIDEOS
     });
     const { data } = await api.post(`/videos/${id}/like`, config);
-    console.log('data', data);
-    
     dispatch({
       type: ActionTypes.LIKE_VIDEOS_SUCCESS,
       payload: data.reverse(),
