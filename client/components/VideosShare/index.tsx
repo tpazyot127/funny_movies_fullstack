@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 import { toast } from "react-toastify";
 import { useRouter } from 'next/router'
 
-const api = process.env.API_URL
+const api = 'https://funny-movies-fullstack-backend.vercel.app'
 const socket = io(`${api}/client`);
 
 const VideosShare: React.FC = () => {
