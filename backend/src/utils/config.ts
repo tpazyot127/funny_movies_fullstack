@@ -21,6 +21,8 @@ export const corsConfig = (): CorsOptions => ({
   origin: process.env.CLIENT_URL,
   methods: 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
   credentials: true,
+  allowedHeaders:
+  'Origin, X-Requested-With, Content-Type, Accept, Authentication, Access-control-allow-credentials, Access-control-allow-headers, Access-control-allow-methods, Access-control-allow-origin, User-Agent, Referer, Accept-Encoding, Accept-Language, Access-Control-Request-Headers, Cache-Control, Pragma',
 });
 
 export const sessionConfig = (MongoDBStore: any): SessionOptions => ({
