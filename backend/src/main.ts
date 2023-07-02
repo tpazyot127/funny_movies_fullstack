@@ -14,7 +14,7 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 async function bootstrap() {
 	const app = await NestFactory.create<NestExpressApplication>(AppModule);
 	app.enableCors(corsConfig());
-	app.use(session(sessionConfig(MongoDBStore)));
+	// app.use(session(sessionConfig(MongoDBStore)));
 	app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 	await app.listen(4000);
 }
