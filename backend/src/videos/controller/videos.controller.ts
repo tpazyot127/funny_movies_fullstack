@@ -1,13 +1,9 @@
 import {
   Controller,
   Post,
-  Body,
-  Inject,
-  UseGuards,
   Get,
   Param,
 } from '@nestjs/common';
-import { AuthGuard } from 'src/guards/auth.guard';
 import { VideosService } from '../services/videos.service';
 
 @Controller('videos')
