@@ -6,7 +6,7 @@ import { VideoDTO } from './client.dto';
 @WebSocketGateway({
 	namespace: '/client',
 	cors: {
-        origin: "http://localhost:3000",	
+        origin: process.env.CLIENT_URL,	
         methods: ["GET", "POST"]
     },
 })
