@@ -4,22 +4,21 @@ import { useTypedSelector, useVideosActions } from "../../hooks";
 import VideosCard from "../VideosCard";
 import { VideosInterface } from "../../interfaces";
 import { io } from "socket.io-client";
-
 const Dashboard: React.FC = () => {
   const { fetchVideos } = useVideosActions();
   const { data } = useTypedSelector((state) => state?.videos || {});
   const [newSocketData, setNewSocketData] = useState<any>();
-  
+
   useEffect(() => {
     fetchVideos();
   }, [newSocketData]);
 
   useEffect(() => {
-    const socket = io("http://localhost:4000/client");
+    const socket = io(`${process.env.API_URL}/client`);
 
     socket.on("connect", () => {
       console.log("WebSocket connection established.");
-      socket.emit("joinRoom", 'room1'); // Join the room after connecting
+      socket.emit("joinRoom", "room1"); // Join the room after connecting
     });
 
     socket.on("latestVideo", (data) => {
