@@ -14,7 +14,8 @@ const Dashboard: React.FC = () => {
   }, [newSocketData]);
 
   useEffect(() => {
-    const socket = io(`${process.env.API_URL}/client`);
+    const api = process.env.API_URL
+    const socket = io(`${api}/client`); 
 
     socket.on("connect", () => {
       console.log("WebSocket connection established.");

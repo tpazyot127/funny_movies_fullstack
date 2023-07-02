@@ -4,7 +4,8 @@ import { io } from "socket.io-client";
 import { toast } from "react-toastify";
 import { useRouter } from 'next/router'
 
-const socket = io(`${process.env.API_URL}/client`);
+const api = process.env.API_URL
+const socket = io(`${api}/client`);
 
 const VideosShare: React.FC = () => {
   const router = useRouter()
