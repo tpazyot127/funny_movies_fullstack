@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { useTypedSelector, useVideosActions } from "../../hooks";
 import VideosCard from "../VideosCard";

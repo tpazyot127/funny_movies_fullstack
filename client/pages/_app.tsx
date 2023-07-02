@@ -1,6 +1,7 @@
 
 //importing styles
 import "../styles/index.css";
+import React from "react";
 import "../styles/bootstrap.min.css";
 //importing utils
 import { useStore } from "../redux";
@@ -11,7 +12,6 @@ import { Container } from "react-bootstrap";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 function MyApp({ Component, pageProps }: AppProps) {
   const initialState = {
     ...pageProps.initialReduxState,

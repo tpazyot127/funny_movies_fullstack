@@ -1,3 +1,4 @@
+import React from 'react';
 import { NextPage } from 'next';
 import Register from '../../components/Register';
 import SEO from '../../components/SEO';

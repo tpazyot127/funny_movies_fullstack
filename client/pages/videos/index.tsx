@@ -1,3 +1,4 @@
+import React from 'react';
 import SEO from '../../components/SEO';
 import VideosShare from '../../components/VideosShare';
 import { NextPage } from 'next';

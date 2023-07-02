@@ -1,4 +1,5 @@
 //importing types & utils
+import React from 'react';
 import { homeConfig } from '../utils/config';
 import { NextPage } from 'next';
 //importing components

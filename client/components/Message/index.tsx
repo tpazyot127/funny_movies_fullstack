@@ -1,3 +1,4 @@
+import React from 'react';
 import { Alert } from 'react-bootstrap';
 
 const Message: React.FC<{ variant?: string, children : any }> = ({

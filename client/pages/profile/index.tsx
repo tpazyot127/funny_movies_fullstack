@@ -1,3 +1,4 @@
+import React from 'react';
 import { NextPage } from 'next';
 import Profile from '../../components/Profile';
 import SEO from '../../components/SEO';

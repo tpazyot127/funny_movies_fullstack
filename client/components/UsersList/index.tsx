@@ -1,17 +1,17 @@
-import Link from 'next/link';
-import { useEffect } from 'react';
-import { Button, Table } from 'react-bootstrap';
-import { useAdmin, useTypedSelector, useUserActions } from '../../hooks';
-import Loader from '../Loader';
-import Message from '../Message';
+import React, { useEffect } from "react";
+import Link from "next/link";
+import { Button, Table } from "react-bootstrap";
+import { useAdmin, useTypedSelector, useUserActions } from "../../hooks";
+import Loader from "../Loader";
+import Message from "../Message";
 
 const UsersList = () => {
   useAdmin();
 
   const { loading, error, data, success } = useTypedSelector(
-    state => state.users
+    (state) => state.users
   );
-  const user = useTypedSelector(state => state.user);
+  const user = useTypedSelector((state) => state.user);
   const { fetchUsers, deleteUser } = useUserActions();
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const UsersList = () => {
             </tr>
           </thead>
           <tbody>
-            {data.map(_user => (
+            {data.map((_user) => (
               <tr key={_user._id}>
                 <td>{_user._id}</td>
                 <td>{_user.name}</td>
@@ -46,9 +46,9 @@ const UsersList = () => {
                 </td>
                 <td>
                   {_user.isAdmin ? (
-                    <i className="fas fa-check" style={{ color: 'green' }}></i>
+                    <i className="fas fa-check" style={{ color: "green" }}></i>
                   ) : (
-                    <i className="fas fa-times" style={{ color: 'red' }}></i>
+                    <i className="fas fa-times" style={{ color: "red" }}></i>
                   )}
                 </td>
                 <td>
@@ -63,7 +63,7 @@ const UsersList = () => {
                     onClick={() => {
                       if (
                         window.confirm(
-                          'Are you sure you want to delete this user?'
+                          "Are you sure you want to delete this user?"
                         )
                       ) {
                         deleteUser(_user._id);

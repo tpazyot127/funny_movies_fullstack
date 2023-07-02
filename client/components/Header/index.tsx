@@ -1,4 +1,4 @@
-//importing components
+import React from 'react';
 import Link from 'next/link';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import { useTypedSelector, useUserActions } from '../../hooks';

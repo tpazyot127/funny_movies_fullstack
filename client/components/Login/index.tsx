@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import { FormEvent, useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
