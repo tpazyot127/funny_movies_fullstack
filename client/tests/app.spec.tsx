@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { useStore } from "../../redux";
-import MyApp from "../_app";
+import { useStore } from "../redux";
+import MyApp from "../pages/_app";
 
 jest.mock("../../redux");
 
