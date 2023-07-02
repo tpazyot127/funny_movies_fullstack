@@ -4,7 +4,7 @@ import { MongooseModuleOptions } from '@nestjs/mongoose';
 import { SessionOptions } from 'express-session';
 
 export const connectDB = (
-  configService: ConfigService
+  configService: ConfigService,
 ): MongooseModuleOptions => {
   const dbPassword = configService.get<string>('MONGODB_PASSWORD');
   const dbName = configService.get<string>('MONGODB_DATABASE_NAME');
@@ -18,11 +18,10 @@ export const connectDB = (
 };
 
 export const corsConfig = (): CorsOptions => ({
-  origin: process.env.CLIENT_URL,
+  allowedHeaders: '*',
+  origin: '*',
   methods: 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
   credentials: true,
-  allowedHeaders:
-  'Origin, X-Requested-With, Content-Type, Accept, Authentication, Access-control-allow-credentials, Access-control-allow-headers, Access-control-allow-methods, Access-control-allow-origin, User-Agent, Referer, Accept-Encoding, Accept-Language, Access-Control-Request-Headers, Cache-Control, Pragma',
 });
 
 export const sessionConfig = (MongoDBStore: any): SessionOptions => ({

@@ -9,10 +9,8 @@ import { VideoDTO } from './client.dto';
         origin: process.env.CLIENT_URL,	
         methods: ["GET", "POST"],
 		credentials: true,
-		allowedHeaders:
-      'Origin, X-Requested-With, Content-Type, Accept, Authentication, Access-control-allow-credentials, Access-control-allow-headers, Access-control-allow-methods, Access-control-allow-origin, User-Agent, Referer, Accept-Encoding, Accept-Language, Access-Control-Request-Headers, Cache-Control, Pragma',
-        }
-})
+		allowedHeaders: '*'
+}})
 export class ClientGateway implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
 	constructor(
 		private readonly videoProcessingService: VideoProcessingService) {}
