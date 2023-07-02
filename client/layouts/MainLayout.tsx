@@ -6,7 +6,7 @@ import {
 } from '../hooks';
 import { useEffect } from 'react';
 
-const MainLayout: React.FC = ({ children }) => {
+const MainLayout: React.FC = ({ children }: any) => {
   const accessToken = useLocalStorage('', 'accessToken');
   const { getCurrentUser } = useUserActions();
   
