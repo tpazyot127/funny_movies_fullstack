@@ -18,7 +18,6 @@ export const connectDB = (
 };
 
 export const corsConfig = (): CorsOptions => ({
-  allowedHeaders: '*',
   origin: 'https://funny-movies-fullstack-client.vercel.app',
   methods: 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
   credentials: true,

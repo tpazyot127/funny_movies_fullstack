@@ -9,7 +9,6 @@ import { VideoDTO } from './client.dto';
         origin: 'https://funny-movies-fullstack-client.vercel.app',	
         methods: ["GET", "POST"],
 		credentials: true,
-		allowedHeaders: '*'
 }})
 export class ClientGateway implements OnGatewayInit, OnGatewayConnection, OnGatewayDisconnect {
 	constructor(
