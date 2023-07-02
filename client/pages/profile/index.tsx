@@ -4,7 +4,7 @@ import Profile from '../../components/Profile';
 import SEO from '../../components/SEO';
 import { homeConfig } from '../../utils/config';
 
-const LoginPage: NextPage = () => {
+const ProfilePage: NextPage = () => {
   return (
     <>
       <SEO {...homeConfig} />
@@ -14,4 +14,4 @@ const LoginPage: NextPage = () => {
     </>
   );
 };
-export default LoginPage;
+export default ProfilePage;

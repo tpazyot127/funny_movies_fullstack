@@ -17,8 +17,8 @@ const VideosShare: React.FC = () => {
 
   const getUserData = async () => {
     const user = localStorage.getItem("userDatas");
-    const userDatas = await JSON.parse(user || "");
-    setUserDataEmail(userDatas.email);
+    const userDatas = user && await JSON.parse(user || "");
+    userDatas && setUserDataEmail(userDatas.email);
   };
 
   const sendNewVideo = (event: React.FormEvent) => {

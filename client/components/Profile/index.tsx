@@ -8,7 +8,6 @@ import {
   useUserActions,
 } from '../../hooks';
 import { UserCredentials } from '../../interfaces';
-import Link from 'next/link';
 
 const Profile = () => {
   useAuth();

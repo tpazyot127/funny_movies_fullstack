@@ -24,7 +24,7 @@ export const fetchVideos = () => async (dispatch: Dispatch<VideosAction>) => {
   } catch (error: any) {
     dispatch({
       type: ActionTypes.FETCH_VIDEOS_ERROR,
-      payload: error.response.data,
+      payload: error.response,
     });
   }
 };

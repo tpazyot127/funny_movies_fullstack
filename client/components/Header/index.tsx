@@ -1,57 +1,38 @@
-import React from 'react';
-import Link from 'next/link';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
-import { useTypedSelector, useUserActions } from '../../hooks';
+import React from "react";
+import Link from "next/link";
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { useTypedSelector, useUserActions } from "../../hooks";
+import { useRouter } from "next/router";
 
 const Header = () => {
-  const { data } = useTypedSelector(state => state.user);
+  const router = useRouter();
+  const { data } = useTypedSelector((state) => state.user);
   const { logout } = useUserActions();
 
   return (
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
-          <Link href="/" passHref>
-            <Navbar.Brand>Funny Movies</Navbar.Brand>
-          </Link>
+          <Navbar.Brand href="/">Funny Movies</Navbar.Brand>
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Link href="/videos" passHref>
-                <Nav.Link>
-                  Share videos
-                </Nav.Link>
-              </Link>
+              <Nav.Link href="/videos" >Share videos</Nav.Link>
               {data ? (
                 <NavDropdown title={data.name} id="username">
-                  <Link href="/profile" passHref>
-                    <NavDropdown.Item>Profile</NavDropdown.Item>
-                  </Link>
+                  <NavDropdown.Item onClick={() => router.push('/profile')}>Profile</NavDropdown.Item>
                   <NavDropdown.Item onClick={() => logout()}>
                     Logout
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <Link href="/login" passHref>
-                  <Nav.Link>
-                    <i className="fas fa-user"></i> Sign In
-                  </Nav.Link>
-                </Link>
+                <Nav.Link href="/login">
+                  <i className="fas fa-user"></i> Sign In
+                </Nav.Link>
+                
               )}
-
-              {data && data.isAdmin && (
-                <NavDropdown title="Admin" id="username">
-                  <Link href="/admin/users" passHref>
-                    <NavDropdown.Item>Users</NavDropdown.Item>
-                  </Link>
-                  <Link href="/admin/products" passHref>
-                    <NavDropdown.Item>Products</NavDropdown.Item>
-                  </Link>
-                  <Link href="/admin/orders" passHref>
-                    <NavDropdown.Item>Orders</NavDropdown.Item>
-                  </Link>
-                </NavDropdown>
-              )}
+              
             </Nav>
           </Navbar.Collapse>
         </Container>
