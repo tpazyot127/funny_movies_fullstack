@@ -41,7 +41,6 @@ export class AuthController {
     return loggedUser;
   }
 
-  @UseGuards(AuthGuard)
   @Get('profile')
   getProfile(@Session() session: any) {
     return session.user;

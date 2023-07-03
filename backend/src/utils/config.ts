@@ -24,11 +24,11 @@ export const corsConfig = (): CorsOptions => ({
 });
 
 export const sessionConfig = (MongoDBStore: any): SessionOptions => ({
-  secret: process.env.SESSION_KEY,
+  secret: 'tuananh127',
   resave: false,
   saveUninitialized: false,
   cookie:
-    process.env.NODE_ENV === 'production'
+    process.env.CLIENT_URL !== 'DEV'
       ? {
           httpOnly: true,
           sameSite: 'none',

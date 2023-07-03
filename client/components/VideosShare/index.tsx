@@ -5,7 +5,11 @@ import { useRouter } from 'next/router'
 
 
 const api = process.env.API_URL === 'DEV' ? 'http://localhost:4000' : 'https://wandering-sky-219.fly.dev'
-const socket = io(`${api}/client`);
+const socket = io(`${api}/client`, {
+  path: '/socket.io',
+  transports: ['websocket'],
+  secure: true,
+});
 
 const VideosShare: React.FC = () => {
   const router = useRouter()

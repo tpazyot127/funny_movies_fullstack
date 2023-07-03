@@ -15,7 +15,11 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     const api = process.env.API_URL === 'DEV' ? 'http://localhost:4000' : 'https://wandering-sky-219.fly.dev'
-    const socket = io(`${api}/client`); 
+    const socket = io(`${api}/client`, {
+      path: '/socket.io',
+      transports: ['websocket'],
+      secure: true,
+    });
 
     socket.on("connect", () => {
       console.log("WebSocket connection established.");
