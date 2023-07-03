@@ -52,12 +52,12 @@ export class UsersService {
     id: string,
     attrs: Partial<UserDocument>
   ): Promise<UserDocument> {
-    // if (!Types.ObjectId.isValid(id))
-    //   throw new BadRequestException('Invalid user ID.');
+    if (!Types.ObjectId.isValid(id))
+      throw new BadRequestException('Invalid user ID.');
 
     const user = await this.userModel.findById(id);
 
-    if (!user) throw new BadRequestException('User not found.');
+    if (!user) throw new NotFoundException('User not found.');
 
     const existingUser = await this.findOne(attrs.email);
 
@@ -75,7 +75,7 @@ export class UsersService {
 
     return updatedUser;
   }
-
+  
   async adminUpdate(id: string, attrs: Partial<UserDocument>) {
     if (!Types.ObjectId.isValid(id))
       throw new NotFoundException('Invalid user ID.');

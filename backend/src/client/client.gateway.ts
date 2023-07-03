@@ -6,7 +6,7 @@ import { VideoDTO } from './client.dto';
 @WebSocketGateway({
 	namespace: '/client',
 	cors: {
-        origin: 'https://funny-movies-fullstack-client.vercel.app',	
+        origin: process.env.CLIENT_URL === 'DEV' ? 'http://localhost:3000' : 'https://funny-movies-fullstack-client.vercel.app',	
         methods: ["GET", "POST"],
 		credentials: true,
 }})

@@ -14,7 +14,7 @@ const Dashboard: React.FC = () => {
   }, [newSocketData]);
 
   useEffect(() => {
-    const api = 'https://wandering-sky-219.fly.dev'
+    const api = process.env.API_URL === 'DEV' ? 'http://localhost:4000' : 'https://wandering-sky-219.fly.dev'
     const socket = io(`${api}/client`); 
 
     socket.on("connect", () => {

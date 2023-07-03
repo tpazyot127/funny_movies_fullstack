@@ -26,7 +26,8 @@ export class AuthController {
     private authService: AuthService,
     private usersService: UsersService
   ) {}
-
+  
+  @UseGuards(LocalAuthGuard)
   @Post('login')
   async login(@CurrentUser() user: UserDocument, @Session() session: any) {
     const { name, _id, email, isAdmin } = user;
