@@ -14,7 +14,7 @@ const Dashboard: React.FC = () => {
   }, [newSocketData]);
 
   useEffect(() => {
-    const api = 'https://funny-movies-fullstack-backend.vercel.app'
+    const api = 'https://wandering-sky-219.fly.dev'
     const socket = io(`${api}/client`); 
 
     socket.on("connect", () => {
