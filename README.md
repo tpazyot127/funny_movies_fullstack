@@ -78,7 +78,7 @@ Add Environment Variables - Backend
   
   - `MONGODB_URL` 
   - `JWT_SECRET`
-  - `CLIENT_URL`
+  - `CLIENT_URL` : 'DEV' or 'PROD'
   - `SESSION_KEY`
 
 </details>
@@ -105,6 +105,14 @@ Run test
 
 ```bash
 cd backend
+```
+
+```bash
+yarn test
+```
+
+```bash
+cd client
 ```
 
 ```bash

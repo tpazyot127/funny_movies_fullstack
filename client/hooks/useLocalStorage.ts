@@ -12,7 +12,7 @@ export const useLocalStorage = (defaultValue: any, key: any) => {
   }, [defaultValue, key]);
 
   useEffect(() => {
-    setValue(localStorage.getItem('accessToken'));
+    setValue(localStorage.getItem(key));
   }, [key]);
 
   return value;
