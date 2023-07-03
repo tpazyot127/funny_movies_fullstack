@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { CurrentUser } from '../../decorators/current-user.decorator';
 import { AuthGuard } from '../../guards/auth.guard';
-import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
+import { JwtAuthGuard } from '../../guards/jwt-auth.guard';
 import { LocalAuthGuard } from '../../guards/local-auth.guard';
 import { Serialize } from '../../interceptors/serialize.interceptor';
 import { ProfileDto } from '../dtos/profile.dto';
@@ -41,6 +41,7 @@ export class AuthController {
     return loggedUser;
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get('profile')
   getProfile(@Session() session: any) {
     return session.user;
