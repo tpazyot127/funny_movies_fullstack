@@ -15,12 +15,12 @@ const Header = () => {
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
-          <Navbar.Brand href="/">Funny Movies</Navbar.Brand>
+          <Navbar.Brand onClick={() => router.push('/')}>Funny Movies</Navbar.Brand>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link href="/videos" >Share videos</Nav.Link>
+              <Nav.Link onClick={() => router.push('/videos')} >Share videos</Nav.Link>
               {data ? (
                 <NavDropdown title={data.name} id="username">
                   <NavDropdown.Item onClick={() => router.push('/profile')}>Profile</NavDropdown.Item>
