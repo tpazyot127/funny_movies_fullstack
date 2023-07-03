@@ -6,6 +6,9 @@ import { useRouter } from "next/router";
 const Header = () => {
   const router = useRouter();
   const { data } = useTypedSelector((state) => state.user);
+
+  console.log(929292992, data);
+  
   const { logout } = useUserActions();
 
   return (
@@ -29,7 +32,6 @@ const Header = () => {
                 <Nav.Link href="/login">
                   <i className="fas fa-user"></i> Sign In
                 </Nav.Link>
-                
               )}
               
             </Nav>
