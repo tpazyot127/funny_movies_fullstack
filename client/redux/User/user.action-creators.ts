@@ -83,6 +83,7 @@ export const logout = () => async (dispatch: Dispatch<UserAction>) => {
   try {
     await api.post('/auth/logout', {}, { withCredentials: true });
     localStorage.clear()
+    Router.push('/')
     dispatch({
       type: ActionTypes.USER_LOGOUT,
       payload: null,
