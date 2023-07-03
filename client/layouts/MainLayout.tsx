@@ -16,7 +16,7 @@ const MainLayout: React.FC = ({ children }: any) => {
     if (accessToken.length > 0) {
       getCurrentUser(accessToken);
     }
-  }, [accessToken]);
+  }, [accessToken, getCurrentUser]);
 
   return (
     <div className="app__container">

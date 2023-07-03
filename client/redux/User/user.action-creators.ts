@@ -4,6 +4,7 @@ import { UserCredentials, UserEditCredentials } from '../../interfaces';
 import { api } from '../../lib';
 import { ActionTypes } from './user.action-types';
 import { UserAction } from './user.actions';
+import { toast } from 'react-toastify';
 
 export const login =
   (email: string, password: string) =>
@@ -129,8 +130,7 @@ export const register =
       });
 
       localStorage.setItem('accessToken', data.accessToken);
-
-      Router.push('/');
+      toast.success('Account created successfully');
     } catch (error: any) {
       dispatch({
         type: ActionTypes.USER_REGISTER_ERROR,
