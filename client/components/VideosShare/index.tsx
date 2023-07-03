@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import { io } from "socket.io-client";
-import { toast } from "react-toastify";
 import { useRouter } from 'next/router'
 
 const api = 'https://wandering-sky-219.fly.dev'
