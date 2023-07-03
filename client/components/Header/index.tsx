@@ -7,6 +7,9 @@ import { useRouter } from "next/router";
 const Header = () => {
   const router = useRouter();
   const { data } = useTypedSelector((state) => state.user);
+
+  console.log('data9999', data);
+  
   const { logout } = useUserActions();
 
   return (
