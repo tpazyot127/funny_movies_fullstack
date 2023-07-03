@@ -16,7 +16,7 @@ async function bootstrap() {
 	app.enableCors(corsConfig());
 	// app.use(session(MongoDBStore));
 	app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
-	await app.listen(4000);
+	await app.listen(3000, '0.0.0.0'); 
 }
 
 
