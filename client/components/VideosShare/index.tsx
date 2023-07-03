@@ -3,6 +3,7 @@ import { Row, Col, Form, Button } from "react-bootstrap";
 import { io } from "socket.io-client";
 import { useRouter } from 'next/router'
 
+
 const api = 'https://wandering-sky-219.fly.dev'
 const socket = io(`${api}/client`);
 
